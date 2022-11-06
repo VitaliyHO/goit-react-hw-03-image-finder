@@ -4,7 +4,7 @@ import { SearchBar } from './Components/SearchBar/SearchBar';
 import { fetchImages } from './Helpers/PixabeyApi';
 import { ImageGallery } from './Components/ImageGallery/ImageGallery';
 import styles from './styles/styles.css'
-
+import { Button } from './Components/Button/Button';
 
 
 class App extends Component {
@@ -26,6 +26,7 @@ componentDidUpdate(_, prevState) {
   if (prevState.query !== query || prevState.page !== page) {
     fetchImages(query, page).then((data) => {
       this.setState(prev => ({ images: [...prev.images, ...data.hits] }))
+      console.log('DU: ', data);
     });
   }
 }
@@ -35,6 +36,7 @@ render() {
     <div className="App">
       <SearchBar handleSubmit={this.handleSubmitForm} />
       <ImageGallery images={this.state.images}/>
+      <Button/>
     </div>
   );
 }}
