@@ -34,7 +34,6 @@ class App extends Component {
             images: page === 1 ? data.hits : [...prev.images, ...data.hits],
             totalHits: page === 1 ? data.totalHits - data.hits.length : data.totalHits - [...prev.images, ...data.hits].length
           }))
-          console.log('DU: ', data);
         }).finally(() => {
           this.setState({ isLoading: false })
         })
