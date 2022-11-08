@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 import { SearchBar } from './Components/SearchBar/SearchBar';
 import { fetchImages } from './Helpers/PixabeyApi';
 import { ImageGallery } from './Components/ImageGallery/ImageGallery';
-import styles from './styles/styles.css'
 import { Button } from './Components/Button/Button';
 import { Loader } from './Components/Loader/Loader';
 
@@ -66,9 +65,3 @@ class App extends Component {
 }
 
 export default App;
-
-
-
-
-//! Клік по оверлеї а не по картинці
-//! Перенести стилі на модулі
